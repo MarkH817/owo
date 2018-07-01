@@ -1,0 +1,10 @@
+{
+  "generator-lionbyte": {
+    "name": "owo",
+    "description": "",
+    "version": "0.0.0",
+    "projectType": "generic",
+    "gitHooks": true,
+    "command": ""
+  }
+}

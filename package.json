@@ -1,0 +1,61 @@
+{
+  "name": "owo",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Mark Hernandez <mark@lion-byte.com>",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "prettier --write **/*.js && standard --fix",
+    "lint:type": "tsc --pretty",
+    "start": "node src",
+    "test": "standard && tsc --pretty && jest --coverage"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "standard": {
+    "globals": [
+      "afterAll",
+      "afterEach",
+      "beforeAll",
+      "beforeEach",
+      "describe",
+      "expect",
+      "jest",
+      "test"
+    ],
+    "ignore": []
+  },
+  "hookInfo": {
+    "husky": {
+      "hooks": {
+        "pre-commit": [
+          "lint-staged"
+        ]
+      }
+    },
+    "lint-staged": {
+      "*.js": [
+        "prettier --write",
+        "standard --fix",
+        "git add"
+      ],
+      "*.{md,less}": [
+        "prettier --write",
+        "git add"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.1",
+    "husky": "^1.0.0-rc.9",
+    "jest": "^23.2.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
+    "standard": "^11.0.1",
+    "typescript": "^2.9.2"
+  }
+}
